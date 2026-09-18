@@ -1,6 +1,21 @@
 const toast = document.querySelector('.toast');
 const showToast = (message) => { toast.textContent = message; toast.classList.add('show'); setTimeout(() => toast.classList.remove('show'), 2400); };
 
+const siteHeader = document.querySelector('.site-header');
+let lastScrollY = window.scrollY;
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  const scrollDelta = currentScrollY - lastScrollY;
+
+  if (currentScrollY <= 20) {
+    siteHeader.classList.remove('is-hidden');
+  } else if (Math.abs(scrollDelta) >= 10) {
+    siteHeader.classList.toggle('is-hidden', scrollDelta > 0);
+  }
+
+  lastScrollY = currentScrollY;
+}, { passive: true });
+
 document.querySelectorAll('.filter').forEach((button) => button.addEventListener('click', () => {
   document.querySelectorAll('.filter').forEach((item) => item.classList.remove('active'));
   button.classList.add('active');

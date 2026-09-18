@@ -11,3 +11,4 @@
 .brand img{display:block;width:auto;height:42px;max-width:120px;object-fit:contain}.visual-creature .project-video{opacity:.78}.visual-creature:hover .project-video{opacity:.95}
 .site-header{height:230px}.brand img{height:210px;max-width:600px}.site-header .brand{position:absolute;top:12px;left:5vw}.site-header .desktop-nav{margin-left:auto}
 @media(max-width:800px){.site-header{height:230px}.site-header .brand{top:15px;left:6vw}}
+.site-header{transition:transform .3s ease}.site-header.is-hidden{transform:translateY(-100%)}
